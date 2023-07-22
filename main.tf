@@ -13,26 +13,56 @@ provider "aws" {
 
 resource "aws_vpc" "vpc_terraform_test" {
   cidr_block = "10.0.0.0/16"
+
+  tags = {
+    Environment = "Development"
+    Terraform   = "True"
+    Project     = "Learning Terraform Basics"
+  }
 }
 
 resource "aws_subnet" "public_subnet" {
   vpc_id            = aws_vpc.vpc_terraform_test.id
   cidr_block        = "10.0.1.0/24"
   availability_zone = "us-east-1a"
+
+  tags = {
+    Environment = "Development"
+    Terraform   = "True"
+    Project     = "Learning Terraform Basics"
+  }
 }
 
 resource "aws_subnet" "private_subnet" {
   vpc_id            = aws_vpc.vpc_terraform_test.id
   cidr_block        = "10.0.2.0/24"
   availability_zone = "us-east-1b"
+
+  tags = {
+    Environment = "Development"
+    Terraform   = "True"
+    Project     = "Learning Terraform Basics"
+  }
 }
 
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc_terraform_test.id
+
+  tags = {
+    Environment = "Development"
+    Terraform   = "True"
+    Project     = "Learning Terraform Basics"
+  }
 }
 
 resource "aws_route_table" "public_route_table" {
   vpc_id = aws_vpc.vpc_terraform_test.id
+
+  tags = {
+    Environment = "Development"
+    Terraform   = "True"
+    Project     = "Learning Terraform Basics"
+  }
 }
 
 resource "aws_route" "public_route" {
@@ -55,5 +85,6 @@ resource "aws_instance" "app_server" {
     Name        = var.instance_name
     Environment = "Development"
     Terraform   = "True"
+    Project     = "Learning Terraform Basics"
   }
 }
