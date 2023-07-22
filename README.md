@@ -10,5 +10,5 @@
 ## Hacer pruebas.
 Hacer pruebas con instancias en la red privada y pública para confirmar que todo está bien. --> Missing
 
-## cuando el código funcione
+## Cuando el código funcione
 Convertirlo en un módulo de VPC. --> Missing
