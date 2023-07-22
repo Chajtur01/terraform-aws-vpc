@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "5.8.0"
+      version = "5.9.0"
     }
   }
 }
@@ -11,12 +11,12 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_instance" "app_server" {
-  ami           = "ami-06ca3ca175f37dd66"
-  instance_type = "t2.micro"
+resource "aws_internet_gateway" "gw" {
+  vpc_id = aws_vpc.main.id
 
   tags = {
-    "Name"      = var.instance_name
-    "Terraform" = "True"
+    Name        = "main"
+    Environment = "Development"
+    Terraform   = "True"
   }
 }
