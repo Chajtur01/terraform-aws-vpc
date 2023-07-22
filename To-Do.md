@@ -5,10 +5,10 @@
 2. NAT Gateway. --> Done
 3. Private and Public Subnets. --> Done
 4. Routes. --> Done
-5. Other essentials of the VPC.
+5. Other essentials of the VPC. --> Done
 
 ## Hacer pruebas.
-Hacer pruebas con instancias en la red privada y pública para confirmar que todo está bien.
+Hacer pruebas con instancias en la red privada y pública para confirmar que todo está bien. --> Missing
 
 ## cuando el código funcione
-Convertirlo en un módulo de VPC.
+Convertirlo en un módulo de VPC. --> Missing
